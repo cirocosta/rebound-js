@@ -229,7 +229,7 @@
     // This is our main solver loop called to move the simulation
     // forward through time. Before each pass in the solver loop
     // onBeforeIntegrate is called on an any listeners that have
-    // registered themeselves with the SpringSystem. This gives you
+    // registered themselves with the SpringSystem. This gives you
     // an opportunity to apply any constraints or adjustments to
     // the springs that should be enforced before each iteration
     // loop. Next the advance method is called to move each Spring in
@@ -311,11 +311,11 @@
   // ------
   // **Spring** provides a model of a classical spring acting to
   // resolve a body to equilibrium. Springs have configurable
-  // tension which is a force multipler on the displacement of the
+  // tension which is a force multiplier on the displacement of the
   // spring from its rest point or `endValue` as defined by [Hooke’s
   // law](http://en.wikipedia.org/wiki/Hooke's_law). Springs also have
   // configurable friction, which ensures that they do not oscillate
-  // infinitely. When a Spring is displaced by updating it’s resting
+  // infinitely. When a Spring is displaced by updating its resting
   // or `currentValue`, the SpringSystems that contain that Spring
   // will automatically start looping to solve for equilibrium. As each
   // timestep passes, `SpringListener` objects attached to the Spring
@@ -396,7 +396,7 @@
 
     // Set the current position of this Spring. Listeners will be updated
     // with this value immediately. If the rest or `endValue` is not
-    // updated to match this value, then the spring will be dispalced and
+    // updated to match this value, then the spring will be displaced and
     // the SpringSystem will start to loop to restore the spring to the
     // `endValue`.
     //
@@ -443,7 +443,7 @@
       return this._currentState.position;
     },
 
-    // Get the absolute distance of the Spring from it’s resting endValue position.
+    // Get the absolute distance of the Spring from its resting endValue position.
     getCurrentDisplacementDistance: function() {
       return this.getDisplacementDistanceForState(this._currentState);
     },
@@ -669,7 +669,7 @@
       return this._wasAtRest;
     },
 
-    // Check if the Spring is atRest meaning that it’s currentValue and
+    // Check if the Spring is atRest meaning that its currentValue and
     // endValue are the same and that it has no velocity. The previously
     // described thresholds for speed and displacement define the bounds
     // of this equivalence check.
@@ -681,7 +681,7 @@
 
     // Force the spring to be at rest at its current position. As
     // described in the documentation for setCurrentValue, this method
-    // makes it easy to do synchronous non-animated updates to ui
+    // makes it easy to do synchronous non-animated updates to UI
     // elements that are attached to springs via SpringListeners.
     setAtRest: function() {
       this._endValue = this._currentState.position;
@@ -807,7 +807,7 @@
   // ---------
   // Here are a few useful JavaScript utilities.
 
-  // Lop off the first occurence of the reference in the Array.
+  // Lop off the first occurrence of the reference in the Array.
   function removeFirst(array, item) {
     var idx = array.indexOf(item);
     idx != -1 && array.splice(idx, 1);
@@ -854,7 +854,7 @@
     }
   }
 
-  // Export the public api using exports for common js or the window for
+  // Export the public API using exports for common JS or the window for
   // normal browser inclusion.
   if (typeof exports != 'undefined') {
     extend(exports, rebound);
